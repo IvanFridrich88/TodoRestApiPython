@@ -19,7 +19,7 @@
 							"pm.test(\"Test content\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.content).to.eql(\"Ahoj\");\r",
-							"    pm.globals.set(\"todo1_id\", jsonData.id);\r",
+							"    pm.collectionVariables.set(\"todo1_id\", jsonData.id);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -67,7 +67,7 @@
 							"pm.test(\"Test content\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.content).to.eql(\"Ahoj2\");\r",
-							"    pm.globals.set(\"todo2_id\", jsonData.id);\r",
+							"    pm.collectionVariables.set(\"todo2_id\", jsonData.id);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -117,11 +117,11 @@
 							"    var expected = { \"todos\" : [\r",
 							"        {\r",
 							"            \"content\" : \"Ahoj\",\r",
-							"            \"id\": pm.globals.get(\"todo1_id\")\r",
+							"            \"id\": pm.collectionVariables.get(\"todo1_id\")\r",
 							"        },\r",
 							"        {\r",
 							"            \"content\" : \"Ahoj2\",\r",
-							"            \"id\": pm.globals.get(\"todo2_id\")\r",
+							"            \"id\": pm.collectionVariables.get(\"todo2_id\")\r",
 							"        }\r",
 							"    ] }\r",
 							"\r",
@@ -166,7 +166,7 @@
 							"pm.test(\"Test content\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.content).to.eql(\"Aloha\");\r",
-							"    pm.expect(jsonData.id).to.eql(pm.globals.get(\"todo2_id\"));\r",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"todo2_id\"));\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -214,11 +214,11 @@
 							"    var expected = { \"todos\" : [\r",
 							"        {\r",
 							"            \"content\" : \"Ahoj\",\r",
-							"            \"id\": pm.globals.get(\"todo1_id\")\r",
+							"            \"id\": pm.collectionVariables.get(\"todo1_id\")\r",
 							"        },\r",
 							"        {\r",
 							"            \"content\" : \"Aloha\",\r",
-							"            \"id\": pm.globals.get(\"todo2_id\")\r",
+							"            \"id\": pm.collectionVariables.get(\"todo2_id\")\r",
 							"        }\r",
 							"    ] }\r",
 							"\r",
@@ -301,7 +301,7 @@
 							"    var expected = { \"todos\" : [\r",
 							"        {\r",
 							"            \"content\" : \"Aloha\",\r",
-							"            \"id\": pm.globals.get(\"todo2_id\")\r",
+							"            \"id\": pm.collectionVariables.get(\"todo2_id\")\r",
 							"        }\r",
 							"    ] }\r",
 							"\r",
@@ -431,6 +431,16 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "todo1_id",
+			"value": ""
+		},
+		{
+			"key": "todo2_id",
+			"value": ""
 		}
 	]
 }
